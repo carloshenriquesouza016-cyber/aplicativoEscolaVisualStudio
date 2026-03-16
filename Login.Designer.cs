@@ -96,6 +96,7 @@
             this.bntEntrar.TabIndex = 42;
             this.bntEntrar.Text = "Entrar";
             this.bntEntrar.UseVisualStyleBackColor = true;
+            this.bntEntrar.Click += new System.EventHandler(this.bntEntrar_Click);
             // 
             // btnCadastrar
             // 

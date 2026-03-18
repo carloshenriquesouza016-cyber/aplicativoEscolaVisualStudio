@@ -12,12 +12,12 @@ using MySql.Data.MySqlClient;
 
 namespace aplicativoEscolar.cs
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
         Conexao conexao = new Conexao();
         string sql;
         MySqlCommand comando;
-        public Form1()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace aplicativoEscolar.cs
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             frmCadastrar telaCadastro = new frmCadastrar();
-           telaCadastro.ShowDialog();
+            telaCadastro.ShowDialog();
         }
 
         private void bntEntrar_Click(object sender, EventArgs e)
@@ -52,14 +52,27 @@ namespace aplicativoEscolar.cs
                 if (reader.Read())
                 {
                     MessageBox.Show("Usuário ou senha incorretos. Tente Novamente.");
-                    SessãoSistema.idUsuario = reader["cpf"].ToString();
-                    SessãoSistema.nomeUsuario = reader["nome"].ToString();
-                    reader.Close
-                {
+                    SessaoSistema.idUsuario = reader["cpf"].ToString();
+                    SessaoSistema.nomeUsuario = reader["nome"].ToString();
+                    reader.Close();
+                    conexao.fecharConexao();
+                    this.Hide();
+                    frmPrincipal menuPrincipal = new frmPrincipal();
+                    menuPrincipal.ShowDialog();
+                    this.Dispose();
 
                 }
-
-
+                else
+                {
+                    MessageBox.Show("Usuário ou senha incorretos. Tente novamente.");
+                    conexao.fecharConexao();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao realizar login. Erro: " + ex.Message);
+                conexao.fecharConexao();
             }
         }
     }
+}

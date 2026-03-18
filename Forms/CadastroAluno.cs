@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace aplicativoEscolar.cs
 {
-    public partial class menuPrincipal : Form
+    public partial class frmCadastroAlunos : Form
     {
-        public menuPrincipal()
+        public frmCadastroAlunos()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

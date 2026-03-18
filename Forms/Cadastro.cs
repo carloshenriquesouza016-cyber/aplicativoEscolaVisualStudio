@@ -37,7 +37,7 @@ namespace aplicativoEscolar.cs
             cpf = txtCpf.Text;
             usuario = txtUsuario1.Text;
             senha = txtSenha1.Text;
-            Professor professorObjeto = new Professor(nome, dataNascimento, telefone, cidade, estado, usuario, senha, cpf);
+            Professor professorObjeto = new Professor(nome, dataNascimento, estado, cidade, cpf, telefone, usuario, senha);
             professorObjeto.CadastrarProfessor();
             this.Close();
 

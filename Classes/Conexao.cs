@@ -16,7 +16,7 @@ namespace cadastroProfessor
         // 4 informações para a conexão
         // server, database, user, password
         string server = "localhost";
-        string database = "cadastroProfessor";
+        string database = "aplicativoescola";
         string user = "root";
         string password = "";
         public MySqlConnection conexao;
